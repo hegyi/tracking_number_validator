@@ -7,6 +7,7 @@ module TrackingNumberValidator
     ]
 
     def self.detect(tracking_number)
+      tracking_number ||= ""
       tracking_number = sanitize(tracking_number)
       VALIDATORS.each do |validator|
         validator = validator.new(tracking_number)

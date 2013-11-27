@@ -13,6 +13,7 @@ module TrackingNumberValidator
       it "sanitizes the input" do
         expect(Service.detect("   425434056299   ")).to eq :dhl
         expect(Service.detect("_425434056299_")).to eq :dhl
+        expect(Service.detect(nil)).to eq nil
       end
     end
   end
